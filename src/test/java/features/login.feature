@@ -8,7 +8,7 @@ Scenario: login
     Given User navigates to "http://www.google.com.ar"
     When User enters <texto> and clicks on search
     Then Search results page is opened
-
+		And Close browser
  Examples:
 |texto|
 |busqueda 1|

@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -54,6 +55,11 @@ public class Steps extends Test1{
 		sassert.assertEquals(page.getTitle(driver), searchText + " - Buscar con Google");
 		sassert.assertAll();
 		extent.flush();
+	}
+	
+	@And("Close browser")
+	public void close_browser() {
+		driver.close();
 	}
 
 }
