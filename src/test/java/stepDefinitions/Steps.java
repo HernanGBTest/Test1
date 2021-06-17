@@ -2,9 +2,6 @@ package stepDefinitions;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -14,8 +11,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import mavenproject.selenium1.Page1;
-import mavenproject.selenium1.Test1;
+import pages.Page1;
+import testNGTests.Test1;
+
+
 
 public class Steps extends Test1{
 
