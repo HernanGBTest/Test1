@@ -2,11 +2,15 @@ package stepDefinitions;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.ITestResult;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,25 +22,32 @@ import testNGTests.TestBase;
 
 
 public class Steps extends TestBase{
-
-	ExtentReports extent;
-	private static Logger log=LogManager.getLogger(Test1.class.getName());
+	Scenario scenario;
+//	private static Logger log=LogManager.getLogger(Test1.class.getName());
 //	public static WebDriver driver=null;
 	SoftAssert sassert = new SoftAssert();
 	String searchText = "" ;
 	Page1 page = null;
 	
+	 @Before
+	    public void before(Scenario scenario) {
+	        this.scenario = scenario;
+	    }
+	
 	@Given ("Browser is opened")
 	public void browser_is_opened() {
-		String path= System.getProperty("user.dir") + "\\reports\\index.html";
-		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-		reporter.config().setReportName("Web Automation Results");
-		reporter.config().setDocumentTitle("Test results");
-		extent = new ExtentReports();
-		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "Hernán");
-		extent.createTest("Google Search");
+//		String path= System.getProperty("user.dir") + "\\reports\\index.html";
+//		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+//		reporter.config().setReportName("Web Automation Results");
+//		reporter.config().setDocumentTitle("Test results");
+//		extent = new ExtentReports();
+//		extent.attachReporter(reporter);
+//		extent.setSystemInfo("Tester", "Hernán");
+//		extent.createTest("Google Search");
 		beforeSuite();
+		ExtentTest test = extent.createTest(scenario.getName());
+		extentTest.set(test);
+		driver.set(initDriver());
 	}
 	
 	@Given("User navigates to {string}")

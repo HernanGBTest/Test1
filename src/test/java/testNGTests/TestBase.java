@@ -20,8 +20,8 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class TestBase {
 	protected static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	String path= System.getProperty("user.dir") + "\\reports\\index.html";
-	ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-	protected static ExtentReports extent;
+	public ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+	public static ExtentReports extent;
 	protected static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 	
 	@BeforeSuite
@@ -34,7 +34,7 @@ public class TestBase {
 		}
 	
 	@BeforeMethod
-	public void beforeTest(ITestResult result) {
+	public void beforeMethod(ITestResult result) {
 		ExtentTest test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
 		driver.set(initDriver());
@@ -42,7 +42,7 @@ public class TestBase {
 	}
 	
 	@AfterMethod
-	public void afterTest() {
+	public void afterMethod() {
 		driver.get().close();
 	}
 	
