@@ -1,4 +1,4 @@
-package mavenproject.selenium1;
+package testNGTests;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package mavenproject.selenium1;
+package pages;
 
 /**
  * Hello world!
