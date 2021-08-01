@@ -47,7 +47,8 @@ public class Steps extends Test1{
 	public void user_enters_text_and_clicks_login(String searchtext) {
 		searchText = searchtext;
 		page= new Page1(driver);
-		page.searchText(driver, searchText);	
+		page.searchText(driver, searchText);
+		System.out.println("Texto a buscar: " + searchText);
 	}
 	@Then("Search results page is opened")
 	public void landing_page_is_opened() {
