@@ -13,10 +13,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.Page1;
 import testNGTests.Test1;
+import testNGTests.TestBase;
 
 
 
-public class Steps extends Test1{
+public class Steps extends TestBase{
 
 	ExtentReports extent;
 	private static Logger log=LogManager.getLogger(Test1.class.getName());
@@ -40,26 +41,26 @@ public class Steps extends Test1{
 	
 	@Given("User navigates to {string}")
 	public void user_navigates_to_url(String url) {
-		driver.get(url);
+		driver.get().get(url);
 		
 	}
 	@When("User enters (.+) and clicks on search$")
 	public void user_enters_text_and_clicks_login(String searchtext) {
 		searchText = searchtext;
-		page= new Page1(driver);
-		page.searchText(driver, searchText);
+		page= new Page1(driver.get());
+		page.searchText(driver.get(), searchText);
 		System.out.println("Texto a buscar: " + searchText);
 	}
 	@Then("Search results page is opened")
 	public void landing_page_is_opened() {
-		sassert.assertEquals(page.getTitle(driver), searchText + " - Buscar con Google");
+		sassert.assertEquals(page.getTitle(driver.get()), searchText + " - Buscar con Google");
 		sassert.assertAll();
 		extent.flush();
 	}
 	
 	@And("Close browser")
 	public void close_browser() {
-		driver.close();
+		driver.get().close();
 	}
 
 }
