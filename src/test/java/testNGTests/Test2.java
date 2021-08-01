@@ -1,4 +1,5 @@
-package mavenproject.selenium1;
+package testNGTests;
+
 
 import org.testng.annotations.Test;
 

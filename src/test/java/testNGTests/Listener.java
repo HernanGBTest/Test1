@@ -1,4 +1,4 @@
-package mavenproject.selenium1;
+package testNGTests;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
