@@ -18,7 +18,7 @@ public class Test1 extends TestBase{
 	@Test(enabled=true)
 	public void testcase1() {
 		SoftAssert sassert = new SoftAssert();
-		String searchText = "testing Google search";
+		String searchText = "testing Google search Aug";
 		System.out.println("Test case 1");
 		driver.get().get("http://www.google.com.ar");
 		Page1 page = new Page1(driver.get());
