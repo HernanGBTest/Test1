@@ -34,7 +34,7 @@ public class Steps extends Test1{
 		reporter.config().setDocumentTitle("Test results");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "Hernán");
+		extent.setSystemInfo("Tester", "Hernán Bertolini");
 		extent.createTest("Google Search");
 		beforeSuite();
 	}
