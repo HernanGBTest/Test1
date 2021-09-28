@@ -49,7 +49,7 @@ public class Steps extends Test1{
 		searchText = searchtext;
 		page= new Page1(driver);
 		page.searchText(driver, searchText);
-		System.out.println("Texto a buscar: -develop text" + searchText);
+		System.out.println("Texto a buscar: -develop2 text" + searchText);
 	}
 	@Then("Search results page is opened")
 	public void landing_page_is_opened() {
