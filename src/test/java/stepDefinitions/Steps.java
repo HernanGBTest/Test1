@@ -53,7 +53,7 @@ public class Steps extends Test1{
 	}
 	@Then("Search results page is opened")
 	public void landing_page_is_opened() {
-		sassert.assertEquals(page.getTitle(driver), searchText + " - Buscar con Google");
+		sassert.assertEquals(page.getTitle(driver), searchText + " - Buscar con Google Argentina");
 		sassert.assertAll();
 		extent.flush();
 	}
