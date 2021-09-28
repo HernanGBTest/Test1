@@ -23,7 +23,7 @@ public class Steps extends Test1{
 	private static Logger log=LogManager.getLogger(Test1.class.getName());
 //	public static WebDriver driver=null;
 	SoftAssert sassert = new SoftAssert();
-	String searchText = "" ;
+	String searchText = "Texto branch test1" ;
 	Page1 page = null;
 	
 	@Given ("Browser is opened")
